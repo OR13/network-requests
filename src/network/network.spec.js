@@ -1,5 +1,4 @@
 const superagent = require("superagent");
-const fetch = require("isomorphic-fetch");
 
 const magicRequest = (
   method,
