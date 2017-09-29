@@ -1,6 +1,6 @@
 const superagent = require("superagent");
 
-const magicRequest = (
+const superAgentRequest = (
   method,
   url,
   body,
@@ -34,9 +34,9 @@ const magicRequest = (
   });
 };
 
-const stupidPromise = () => {
+export const superAgentPromise = () => {
   return new Promise((resolve, reject) => {
-    magicRequest(
+    superAgentRequest(
       "GET",
       "https://swapi.co/api/people/1/",
       {},
@@ -53,8 +53,3 @@ const stupidPromise = () => {
     );
   });
 };
-
-it("renders without crashing", async () => {
-  let response = await stupidPromise();
-  expect(response.body.name).toBe('Luke Skywalker')
-});
